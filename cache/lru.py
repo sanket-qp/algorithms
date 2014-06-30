@@ -3,7 +3,7 @@ from ..linkedlist import DoublyList
  
 class LRU:
   """
-  Implementation of LRU cache 
+  Implementation of LRU cache which works in almost contant time
   LRU cache is implemented using python dictionary and Doubly Linked List 
   dictionary is used for look ups (i.e cache) and Doubly Linked List is used keeping track of recency of objects. 
   the objects which are used frequently are being kept near the head of the list and the ones which are not are kept towards the tail of the list
