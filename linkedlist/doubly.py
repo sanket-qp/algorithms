@@ -31,10 +31,6 @@ class DoublyList:
       node.prev = tail
       self.tail = node
  
-  def add_to_front(self, key, data):
-    node = Node(key, data)
-    self.move_to_front(node)
-
   def move_to_front(self, node):
     if not self.head:
       self.head = node
