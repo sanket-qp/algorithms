@@ -1,3 +1,3 @@
 algorithms
 ==========
-Implmentation of well known algorithms in Python
+Implmentation of some well known algorithms in Python
