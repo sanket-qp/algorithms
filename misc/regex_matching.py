@@ -22,6 +22,7 @@ def matches(s, regex):
     if not s:
       return False
 
+    # recursive case
     # if first char matches, then move forward
     if s[0] == regex[0]:
       return matches(s[1:], regex[1:])
