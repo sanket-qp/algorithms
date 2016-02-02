@@ -69,7 +69,7 @@ def polyfill(grid, x, y, original_color, new_color):
 def fill(grid, x, y, color):
     """
     fills the given grid with given color starting from (x,y) untill 
-    all neighboring pixels are of same color
+    all neighboring pixels of same color are filled with given color
     """
     current = grid[x][y]
     polyfill(grid, x, y, current, color)
