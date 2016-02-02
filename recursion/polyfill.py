@@ -35,6 +35,7 @@ def neighbors(grid, x, y):
     for d in directions.keys():
         x1, y1 = directions[d](x, y)
 
+        # boundh check
         if x1 < 0:
             continue
 
@@ -52,10 +53,8 @@ def neighbors(grid, x, y):
 
 def polyfill(grid, x, y, original_color, new_color):
     # base cases
-    # out of bounds
-    if out_of_bounds(grid, x, y):
-        return 
 
+    # if of different color
     if grid[x][y] != original_color:
         return 
 
@@ -75,7 +74,6 @@ def fill(grid, x, y, color):
     current = grid[x][y]
     polyfill(grid, x, y, current, color)
 
-
 def main():
     grid = random_grid(5, 5)
     print "current grid : "
@@ -91,9 +89,6 @@ def main():
     print "going to fill (%d, %d, %s) with %s" % (x, y, COLORS[original_color], COLORS[new_color]) 
     fill(grid, x, y, new_color)
     print_grid(grid)
-
-    
-
 
 if __name__ == "__main__":
     main()
