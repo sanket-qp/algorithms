@@ -40,7 +40,9 @@ def DFS(node, p_table, path, english_dict, prefixes, longest_word):
     if word_so_far in english_dict:
         current_longest = longest_word.get('longest', '')
         if len(word_so_far) > len(current_longest):
-            longest_word['longest'] = word_so_far
+            # don't use lowercase version
+            _word = ' '.join(p_table[i] for i in path)
+            longest_word['longest'] = _word
     
     for neighbor in neighbors(node, p_table):
         # we only want to visit neighbors which are not in progress
