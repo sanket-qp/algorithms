@@ -41,7 +41,7 @@ def DFS(node, p_table, path, english_dict, prefixes, longest_word):
         current_longest = longest_word.get('longest', '')
         if len(word_so_far) > len(current_longest):
             # don't use lowercase version
-            _word = ' '.join(p_table[i] for i in path)
+            _word = ''.join(p_table[i] for i in path)
             longest_word['longest'] = _word
     
     for neighbor in neighbors(node, p_table):
@@ -70,9 +70,11 @@ def main():
                       'Hs','Mt','Ds','Rg','Cn','Uut','Uuq','Uup','Uuh','Uus','Uuo']
 
     # small sample of the whole table 
+    """
     periodic_table = ['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V',
                       'Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru',
                       'Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La','Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb']
+    """
     longest = longest_word(periodic_table, english_dict, prefixes)
     print "longest_word: %s of length: %d" % (longest, len(longest))
 
